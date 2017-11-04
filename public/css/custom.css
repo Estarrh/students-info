@@ -1,0 +1,38 @@
+.navbar-default {
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 0px;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+#container-fluid{
+    color: white;
+    background-color: cornflowerblue;
+}
+
+#navbar-header{
+    color: white;
+    background-color: cornflowerblue;
+}
+
+#footer{
+     color: white;
+     background-color: cornflowerblue;
+    margin-top:30px;
+    padding:10px;
+    text-align: center;
+ }
+
+#well{
+    margin: 20px;
+}
+#form-group{
+    padding: 30px
+}
+
+.form-container {
+    padding: 50px; margin: 30px 0px; color: cornflowerblue; background: aliceblue;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+</head>
+<body>
+<%- include ../layouts/header.ejs %>
+<% if(messages.error) {%> <p style="color:red"><%-message.error %></p><% } %>
+<% if(messages.success) {%> <p style="color:green"><%-messages.success %></p><% } %>
+
+<center><h2 style="color:#FF7F00">STUDENTS DATA</h2></center>
+
+<table width='80%' border=0>
+
+    <tr style='text-align:left; background-color:#CCC'>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Matric Number</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th>Course</th>
+        <th>Sex</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+
+    <!--
+        Using FOREACH LOOP for the users array
+
+        myArray.forEach(function(el, index) {
+            // el - current element, i - index
+        });
+    -->
+    <% if (data) { %>
+    <% data.forEach(function(user){ %>
+    <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.matric_no %></td>
+        <td><%= user.age %></td>
+        <td><%= user.department %></td>
+        <td><%= user.course %></td>
+        <td><%= user.sex %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+        <td>
+            <div style="float:left">
+                <a href='/users/edit/<%= user.id %>'>Edit</a> &nbsp;
+                <form method="post" action="/users/delete/<%= user.id %>" style="float:right">
+                    <input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+                    <input type="hidden" name="_method" value="DELETE" />
+                </form>
+            </div>
+        </td>
+    </tr>
+    <% }) %>
+    <% } %>
+
+</table>
+
+<%- include ../layouts/footer.ejs %>
+</body>
+</html>
+

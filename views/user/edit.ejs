@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+</head>
+<body>
+<%- include ../layouts/header.ejs %>
+<% if (messages.error) { %>
+<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<div class="well" style="padding: 50px; margin: 30px 300px 30px 30px">
+    <form action="/users/edit/<%= id %>" method="post" name="form">
+        <div class="form-group">
+            <label>FIRSTNAME:</label>
+            <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname" value="<%= firstname %>">
+        </div>
+        <div class="form-group">
+            <label>LAST NAME:</label>
+            <input type="text" class="form-control" placeholder="Enter Lastname" name="lastname" value="<%= lastname %>">
+        </div>
+        <div class="form-group">
+            <label>EMAIL:</label>
+            <input type="text" class="form-control" placeholder="Enter EMAIL" name="email" value="<%= email %>">
+        </div>
+        <div class="form-group">
+            <label>AGE:</label>
+            <input type="text" class="form-control" placeholder="Enter AGE" name="age" value="<%= age %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">MATRIC:</label>
+            <input type="text" class="form-control" placeholder="Enter MATRIC" name="matric" value="<%= matric_no %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">DEPARTMENT:</label>
+            <input type="text" class="form-control" placeholder="Enter DEPARTMENT" name="dept" value="<%= department %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">COURSE:</label>
+            <input type="text" class="form-control" placeholder="Enter COURSE" name="course" value="<%= course %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">LEVEL:</label>
+            <input type="text" class="form-control" placeholder="Enter LEVEL" name="level" value="<%= level %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">DOB:</label>
+            <input type="text" class="form-control" placeholder="Enter DOB" name="dob" value="<%= dob %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">STATE OF ORIGIN:</label>
+            <input type="text" class="form-control" placeholder="Enter STATE OF ORIGIN" name="state" value="<%= state %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">SEX:</label>
+            <input type="text" class="form-control" placeholder="Enter SEX" name="sex" value="<%= sex %>">
+        </div>
+        <div class="form-group">
+            <label for="pwd">PHONE:</label>
+            <input type="text" class="form-control" placeholder="Enter PHONE" name="phone" value="<%= phone %>">
+        </div>
+        <button type="submit" class="btn btn-default">Update Student Record</button>
+        <input type="hidden" name="_method" value="PUT" />
+    </form>
+</div>
+<%- include ../layouts/footer.ejs %>
+
+</body>
+</html>
